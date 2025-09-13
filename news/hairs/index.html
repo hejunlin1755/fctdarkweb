@@ -419,7 +419,7 @@
             <div class="header-top">
                 <div class="logo">
                     <i class="fas fa-graduation-cap"></i>
-                    <h1>FCT资讯网 <span class="campus-badge">更新于2025-9-12</span></h1>
+                    <h1>FCT资讯网 <span class="campus-badge" id="update-date">更新于2025-9-12</span></h1>
                 </div>
                 <div class="user-actions">
                     <button class="btn btn-login"><i class="fas fa-sign-in-alt"></i> 一个假的登录按钮</button>
@@ -442,7 +442,6 @@
                 <h1 class="document-title">初一级食堂有两名同学发现饭菜内有头发</h1>
                 <div class="document-meta">
                     <span class="meta-item"><i class="far fa-clock"></i> 发布时间: 2025-09-12</span>
-                    <span class="meta-item"><i class="far fa-eye"></i> 阅读量:423</span>
                     <span class="meta-item"><i class="far fa-file"></i>分类:八卦新闻 </span>
                 </div>
             </div>
@@ -456,7 +455,71 @@
     </div>
 
     <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">关于我们</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">网站简介</a></li>
+                        <li><a href="#">团队介绍</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">最新新闻</a></li>
+                        <li><a href="#">热门文章</a></li>
+                        <li><a href="#">校园活动</a></li>
+                        <li><a href="#">通知公告</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">帮助中心</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">使用指南</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">反馈建议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">关注我们</h3>
+                    <p>关注我们的社交媒体，获取最新资讯</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 FCT资讯网 版权所有 | 本站由FCT校园网提供技术支持</p>
+            </div>
+        </div>
+    </footer>
 
+    <script>
+        // 动态更新日期
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取当前日期
+            const currentDate = new Date();
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth() + 1; // 月份从0开始，需要加1
+            const day = currentDate.getDate();
+            
+            // 格式化日期为YYYY-M-D格式
+            const formattedDate = `更新于${year}-${month}-${day}`;
+            
+            // 更新页面上的日期显示
+            const updateDateElement = document.getElementById('update-date');
+            if (updateDateElement) {
+                updateDateElement.textContent = formattedDate;
+            }
+        });
+    </script>
 </body>
-
 </html>
