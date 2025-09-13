@@ -418,19 +418,18 @@
         <div class="container">
             <div class="header-top">
                 <div class="logo">
-                    <<i class="fas fa-graduation-cap"></</i>
-                    <!-- 此处将固定日期改为动态日期容器 -->
-                    <h1>FCT资讯网 <span class="campus-badge">更新于<span id="site-update-date"></span></span></h1>
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>FCT资讯网 <span class="campus-badge">更新于2025-9-12</span></h1>
                 </div>
                 <div class="user-actions">
-                    <button class="btn btn-login"><<i class="fas fa-sign-in-alt"></</i> 一个假的登录按钮</button>
-                    <button class="btn btn-register"><<i class="fas fa-user-plus"></</i>一个假的注册按钮</button>
+                    <button class="btn btn-login"><i class="fas fa-sign-in-alt"></i> 一个假的登录按钮</button>
+                    <button class="btn btn-register"><i class="fas fa-user-plus"></i>一个假的注册按钮</button>
                 </div>
             </div>
             <nav>
                 <ul class="main-menu">
-                    <li><a href="https://hejunlin1755.github.io/fctdarkweb"><<i class="fas fa-home"></</i> 首页</a></li>
-                    <li><a href="https://fctweb.org"><<i class="fas fa-newspaper"></</i> FCT校园网</a></li>
+                    <li><a href="https://hejunlin1755.github.io/fctdarkweb"><i class="fas fa-home"></i> 首页</a></li>
+                    <li><a href="https://fctweb.org"><i class="fas fa-newspaper"></i> FCT校园网</a></li>
                 </ul>
             </nav>
         </div>
@@ -441,15 +440,15 @@
         <div class="document-container">
             <div class="document-header">
                 <h1 class="document-title">初一级食堂有两名同学发现饭菜内有头发</h1>
-                <!-- 保留原新闻发布日期（2025-09-12）不变 -->
                 <div class="document-meta">
-                    <span class="meta-item"><<i class="far fa-clock"></</i> 发布时间: 2025-09-12</span>
-                    <span class="meta-item"><<i class="far fa-eye"></</i> 阅读量:423</span>
-                    <span class="meta-item"><<i class="far fa-file"></</i>分类:八卦新闻 </span>
+                    <span class="meta-item"><i class="far fa-clock"></i> 发布时间: 2025-09-12</span>
+                    <span class="meta-item"><i class="far fa-eye"></i> 阅读量:423</span>
+                    <span class="meta-item"><i class="far fa-file"></i>分类:八卦新闻 </span>
                 </div>
             </div>
             
             <div class="document-content">
+                <!-- 这里放置文章内容 -->
                 <h2>震惊！学校的饭里面居然有头发！</h2>
                 <p>今日（9月12日）中午，我校初一年级两名学生在午餐时，于菜品中发现头发，事发于今日中午12时许，正值学生午餐高峰时段。两位同学正坐在自己的教室用餐，据同学描述，他正在食用时，发现一根约数厘米长的头发丝混杂在菜叶中。其他班的同学也在同一道菜中发现了类似情况。</p>
             </div>
@@ -457,49 +456,7 @@
     </div>
 
     <!-- 页脚 -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3 class="footer-title">关于我们</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">网站简介</a></li>
-                        <li><a href="#">联系我们</a></li>
-                        <li><a href="#">免责声明</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">快速导航</h3>
-                    <ul class="footer-links">
-                        <li><a href="https://hejunlin1755.github.io/fctdarkweb">首页</a></li>
-                        <li><a href="https://fctweb.org">FCT校园网</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">关注我们</h3>
-                    <div class="social-links">
-                        <a href="#"><<i class="fab fa-weixin"></</i></a>
-                        <a href="#"><<i class="fab fa-qq"></</i></a>
-                        <a href="#"><<i class="fab fa-weibo"></</i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                © 2025 FCT资讯网 版权所有
-            </div>
-        </div>
-    </footer>
 
-    <!-- 动态获取当前日期的JavaScript（放在body末尾，确保DOM加载完成） -->
-    <script>
-        // 1. 获取当前日期对象
-        const today = new Date();
-        // 2. 提取年、月、日（月份从0开始，需+1；不足两位数补0，保证格式统一）
-        const year = today.getFullYear();
-        const month = String(today.getMonth() + 1).padStart(2, '0');
-        const day = String(today.getDate()).padStart(2, '0');
-        // 3. 拼接为“YYYY-MM-DD”格式，插入到顶部资讯网更新日期容器中
-        document.getElementById('site-update-date').textContent = `${year}-${month}-${day}`;
-    </script>
 </body>
+
 </html>
