@@ -100,6 +100,11 @@
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s;
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
         
         .btn-login {
@@ -121,6 +126,16 @@
         
         .btn-register:hover {
             background: #e64a19;
+        }
+        
+        .btn-contribute {
+            background: var(--secondary);
+            border: 1px solid var(--secondary);
+            color: white;
+        }
+        
+        .btn-contribute:hover {
+            background: #0b8043;
         }
         
         /* 导航菜单 */
@@ -695,6 +710,7 @@
             .user-actions {
                 width: 100%;
                 justify-content: center;
+                flex-wrap: wrap;
             }
             
             .main-menu {
@@ -755,6 +771,10 @@
                 <div class="user-actions">
                     <button class="btn btn-login"><i class="fas fa-sign-in-alt"></i> 一个假的登录按钮</button>
                     <button class="btn btn-register"><i class="fas fa-user-plus"></i>一个假的注册按钮</button>
+                    <!-- 新增投稿按钮 -->
+                    <button class="btn btn-contribute" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdY7LzrwXjuZkAUONl1MgsoehCzMuwwPZt2cd8BpEideJWUwg/viewform?usp=dialog', '_blank')">
+                        <i class="fas fa-pencil-alt"></i>我要投稿
+                    </button>
                 </div>
             </div>
             <nav>
@@ -1095,5 +1115,4 @@
         });
     </script>
 </body>
-
 </html>
