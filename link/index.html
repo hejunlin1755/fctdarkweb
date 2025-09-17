@@ -1,1 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCT网站链接大全</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%);
+            transform: rotate(30deg);
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-section {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+        
+        .search-box {
+            display: flex;
+            justify-content: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .search-box input {
+            flex: 1;
+            padding: 18px 25px;
+            border: 2px solid #e0e6ef;
+            border-radius: 50px 0 0 50px;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: #6a11cb;
+            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.1);
+        }
+        
+        .search-box button {
+            padding: 0 30px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.2);
+        }
+        
+        .search-box button:hover {
+            background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+            transform: translateY(-2px);
+        }
+        
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .category-btn {
+            padding: 12px 25px;
+            background: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            font-size: 1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .category-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .category-btn.active {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            box-shadow: 0 8px 20px rgba(106, 17, 203, 0.3);
+        }
+        
+        .websites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .website-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+            min-height: 280px; /* 统一卡片最小高度 */
+        }
+        
+        .website-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            padding: 25px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-header::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .card-header h3 {
+            margin-bottom: 8px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .category-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-body {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 120px); /* 确保所有卡片内容区域高度一致 */
+        }
+        
+        .card-body p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.7;
+            flex-grow: 1; /* 使描述文本占据可用空间 */
+        }
+        
+        .card-body a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.2);
+            align-self: flex-start; /* 按钮左对齐 */
+        }
+        
+        .card-body a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(106, 17, 203, 0.3);
+            gap: 12px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 70px;
+            padding: 30px;
+            color: #666;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(106, 17, 203, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+            
+            .search-box {
+                flex-direction: column;
+            }
+            
+            .search-box input {
+                border-radius: 50px;
+                margin-bottom: 15px;
+                padding: 15px 20px;
+            }
+            
+            .search-box button {
+                border-radius: 50px;
+                padding: 15px;
+            }
+            
+            .categories {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .category-btn {
+                width: 80%;
+                justify-content: center;
+            }
+            
+            .websites-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FCT网站链接大全</h1>
+            <p>上课再也不用抄那又长又难记的链接了</p>
+        </header>
+        
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="搜索网站名称、描述或关键词...">
+                <button id="search-btn"><i class="fas fa-search"></i> 搜索</button>
+            </div>
+            
+            <div class="categories">
+                <button class="category-btn active"><i class="fas fa-globe"></i> 全部</button>
+                <button class="category-btn"><i class="fas fa-book"></i>学习资源</button>
+                <button class="category-btn"><i class="fas fa-tools"></i>破解电脑</button>
+                <button class="category-btn"><i class="fas fa-users"></i>打字平台</button>
+                <button class="category-btn"><i class="fas fa-newspaper"></i>新闻资讯</button>
+                <button class="category-btn"><i class="fas fa-file-alt"></i> 开发文档</button>
+            </div>
+        </div>
+        
+        <div class="websites-grid">
+            <div class="website-card">
+                <div class="card-header">
+                    <h3>ePass平台</h3>
+                    <span class="category-tag">学习资源</span>
+                </div>
+                <div class="card-body">
+                    <p>用于报名各种项目的网站</p>
+                    <a href="http://epass.fct.edu.mo/fct_ePass/index.php" target="_blank"><i class="fas fa-external-link-alt"></i> 访问网站</a>
+                </div>
+            </div>
+            
+            <div class="website-card">
+                <div class="card-header">
+                    <h3>FCT资讯网</h3>
+                    <span class="category-tag">新闻资讯</span>
+                </div>
+                <div class="card-body">
+                    <p>最大的FCT学校八卦及实用信息,比学校官网还全面 </p>
+                    <a href="https://hejunlin1755.github.io/fctdarkweb/" target="_blank"><i class="fas fa-external-link-alt"></i> 访问网站</a>
+                </div>
+            </div>
+            
+            <div class="website-card">
+                <div class="card-header">
+                    <h3>中英文打字平台</h3>
+                    <span class="category-tag">打字平台</span>
+                </div>
+                <div class="card-body">
+                    <p>用于为初中及以上的学生使用打字功能</p>
+                    <a href="https://cetyping.com/" target="_blank"><i class="fas fa-external-link-alt"></i> 访问网站</a>
+                </div>
+            </div>
+            
+            <div class="website-card">
+                <div class="card-header">
+                    <h3>五色學倉頡 Online</h3>
+                    <span class="category-tag">打字平台</span>
+                </div>
+                <div class="card-body">
+                    <p>用于为小学部的学生们提供打字功能</p>
+                    <a href="https://fcjonline.com/index.php/tc/" target="_blank"><i class="fas fa-external-link-alt"></i> 访问网站</a>
+                </div>
+            </div>
+            
+            <div class="website-card">
+                <div class="card-header">
+                    <h3>iClass 电子书</h3>
+                    <span class="category-tag">学习资源</span>
+                </div>
+                <div class="card-body">
+                    <p>用于为初中以上的学生提供电脑电子书服务</p>
+                    <a href="https://portal.iclass.hk/" target="_blank"><i class="fas fa-external-link-alt"></i> 访问网站</a>
+                </div>
+            </div>
+            
+            <div class="website-card">
+                <div class="card-header">
+                    <h3>破解电脑室的电脑</h3>
+                    <span class="category-tag">破解电脑</span>
+                </div>
+                <div class="card-body">
+                    <p>在电脑室的电脑内访问此网站并点击此链接可下载破解工具</p>
+                    <a href="https://github.com/imengyu/JiYuTrainer/releases/download/1.7.6/JiYuTrainer.exe" target="_blank"><i class="fas fa-external-link-alt"></i> 访问网站</a>
+                </div>
+            </div>
 
+            <div class="website-card">
+                <div class="card-header">
+                    <h3>学校官方网站</h3>
+                    <span class="category-tag">新闻资讯</span>
+                </div>
+                <div class="card-body">
+                    <p>学校各类获奖信息</p>
+                    <a href="https://fctweb.org" target="_blank"><i class="fas fa-external-link-alt"></i> 访问网站</a>
+                </div>
+            </div>
+		
+            <div class="website-card">
+                <div class="card-header">
+                    <h3>智學網</h3>
+                    <span class="category-tag">学习资源</span>
+                </div>
+                <div class="card-body">
+                    <p>人工智能考试平台</p>
+                    <a href="https://www.zhixue.com/login.html" target="_blank"><i class="fas fa-external-link-alt"></i> 访问网站</a>
+                </div>
+            </div>
+		
+            <div class="website-card">
+                <div class="card-header">
+                    <h3>暢言智AI-K12人工智慧教育平臺</h3>
+                    <span class="category-tag">学习资源</span>
+                </div>
+                <div class="card-body">
+                    <p>一个神秘的网站,作者也不知道用来干嘛的</p>
+                    <a href="https://ai.changyan.com/#/login" target="_blank"><i class="fas fa-external-link-alt"></i> 访问网站</a>
+                </div>
+            </div>
+        </div>		
+        <footer>
+            <p>2025FCT网站链接大全 | 收集整理最有用的FCT资源</p>
+            <div class="social-links">
+                <a href="https://github.com/hejunlin1755"><i class="fab fa-github"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-input');
+            const searchBtn = document.getElementById('search-btn');
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const websiteCards = document.querySelectorAll('.website-card');
+            
+            // 搜索功能
+            searchBtn.addEventListener('click', function() {
+                const searchText = searchInput.value.toLowerCase().trim();
+                
+                websiteCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const description = card.querySelector('.card-body p').textContent.toLowerCase();
+                    const category = card.querySelector('.category-tag').textContent.toLowerCase();
+                    
+                    if (title.includes(searchText) || description.includes(searchText) || category.includes(searchText)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+            
+            // 分类筛选功能
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // 移除之前选中的分类
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    // 设置当前分类为选中状态
+                    this.classList.add('active');
+                    
+                    const category = this.textContent.trim();
+                    
+                    websiteCards.forEach(card => {
+                        const cardCategory = card.querySelector('.category-tag').textContent;
+                        
+                        if (category === '全部' || cardCategory === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // 按回车键也可以搜索
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchBtn.click();
+                }
+            });
+            
+            // 添加卡片悬停效果
+            websiteCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
